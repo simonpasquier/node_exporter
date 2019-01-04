@@ -203,6 +203,7 @@ ifdef GO111MODULE
 	cd "$${tmpModule}"/staticcheck && \
 	GO111MODULE=on $(GO) mod init example.com/staticcheck && \
 	GO111MODULE=on GOOS= GOARCH= $(GO) get -u honnef.co/go/tools/cmd/staticcheck@next && \
+	cd - && \
 	rm -rf $${tmpModule};
 else
 	GOOS= GOARCH= GO111MODULE=off $(GO) get -u honnef.co/go/tools/cmd/staticcheck
