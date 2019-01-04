@@ -73,6 +73,8 @@ endif
 
 PROMU_VERSION ?= 0.2.0
 PROMU_URL     := https://github.com/prometheus/promu/releases/download/v$(PROMU_VERSION)/promu-$(PROMU_VERSION).$(GO_BUILD_PLATFORM).tar.gz
+STATICCHECK_VERSION ?= 2019.1
+STATICCHECK_URL     := https://github.com/dominikh/go-tools/releases/download/$(STATICCHECK_VERSION)/staticcheck_$(GOHOSTOS)_$(GOHOSTARCH)
 
 PREFIX                  ?= $(shell pwd)
 BIN_DIR                 ?= $(shell pwd)
@@ -192,22 +194,10 @@ proto:
 	@echo ">> generating code from proto files"
 	@./scripts/genproto.sh
 
-.PHONY: $(STATICCHECK)
 $(STATICCHECK):
-ifdef GO111MODULE
-# Get staticcheck from a temporary directory to avoid modifying the local go.{mod,sum}.
-# See https://github.com/golang/go/issues/27643.
-# For now, we are using the next branch of staticcheck because master isn't compatible yet with Go modules.
-	tmpModule=$$(mktemp -d 2>&1) && \
-	mkdir -p $${tmpModule}/staticcheck && \
-	cd "$${tmpModule}"/staticcheck && \
-	GO111MODULE=on $(GO) mod init example.com/staticcheck && \
-	GO111MODULE=on GOOS= GOARCH= $(GO) get -u honnef.co/go/tools/cmd/staticcheck@next && \
-	cd - && \
-	rm -rf $${tmpModule};
-else
-	GOOS= GOARCH= GO111MODULE=off $(GO) get -u honnef.co/go/tools/cmd/staticcheck
-endif
+	mkdir -p $(FIRST_GOPATH)/bin
+	curl -s -L $(STATICCHECK_URL) > $(STATICCHECK)
+	chmod +x $(STATICCHECK)
 
 ifdef GOVENDOR
 .PHONY: $(GOVENDOR)
