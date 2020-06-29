@@ -49,8 +49,6 @@ github.com/mdlayher/netlink v0.0.0-20181210160939-e069752bc835/go.mod h1:a3TlQHk
 github.com/mdlayher/wifi v0.0.0-20180727163819-efdf3f4195d9 h1:ag57ienknXLMhoSbkYvaZLF9Taxu9GtBHUJ4jP5ER8s=
 github.com/mdlayher/wifi v0.0.0-20180727163819-efdf3f4195d9/go.mod h1:Evt/EIne46u9PtQbeTx2NTcqURpr5K4SvKtGmBuDPN8=
 github.com/mwitkow/go-conntrack v0.0.0-20161129095857-cc309e4a2223/go.mod h1:qRWi+5nqEBWmkhHvq77mSJWrCKwh8bxhgT7d/eI7P4U=
-github.com/pgier/procfs v0.0.0-20191009064913-fd8fc01072a6 h1:SO5nDu8vkv19D83+QgKOjtCJ4VekKCmkJXJBsONzoyM=
-github.com/pgier/procfs v0.0.0-20191009064913-fd8fc01072a6/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
 github.com/pgier/procfs v0.0.0-20191009150458-7d6f90cdaf41 h1:UABs4w4saEiPTwAJqcuGEZXHRV1iEtggSM0jl+E4WbQ=
 github.com/pgier/procfs v0.0.0-20191009150458-7d6f90cdaf41/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

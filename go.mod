@@ -32,3 +32,5 @@ require (
 )
 
 replace github.com/prometheus/procfs => github.com/pgier/procfs v0.0.0-20191009150458-7d6f90cdaf41
+
+go 1.13
